@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <meta property="og:title" content="Chess Windmill: Learn, improve and have fun">
+    <meta property="og:description" content="Learn, improve and have fun">
+    <meta property="og:image" content="battle_chess.jpg">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Chess Windmill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    
+  </head>
+  <style>
+
+  </style>
+  <script>
+    window.onload = function() {
+      var url = new URL(window.location.href);
+      var page = url.searchParams.get("page");
+      var source = "";
+      switch (page){
+       case "tactical-opportunity": 
+         source = "http://tacticalchess.vitomd.com"
+         break
+       case "chess-guardian": 
+         source = "http://vitomd.com/vue-chess-guardian/"
+         break
+       case "winning-blunder": 
+         source = "http://vitomd.com/chess-winning-or-blunder/"
+         break
+       case "hand-brain": 
+         source = "http://handandbrainchess.com/"
+         break
+       case "tactics-generator": 
+         source = "http://chesstacticsgenerator.vitomd.com/"
+         break
+      }
+      loadFrame(source);
+    };
+    function loadFrame(source) {
+      if (source != "") {
+        var intro = document.getElementById("intro")
+        intro.parentNode.removeChild(intro)
+        document.getElementById("ifr").src = source
+      }
+    }
+  </script>
+  <body>
+    <section>
+      <nav class="navbar is-light">
+        <div class="container">
+          <div class="navbar-brand">
+            <h1 class="title" style="margin-bottom: 0px">
+              <a class="navbar-item" href="index.html">
+                Chess Windmill
+              </a>
+            </h1>
+            <div class="navbar-burger burger" data-target="topNav">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div id="topNav" class="navbar-menu">
+            <div class="navbar-start">
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Tactics
+                </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="?page=winning-blunder">
+                    Winning or blunder?
+                  </a>
+                  <a class="navbar-item" href="?page=tactics-generator">
+                    Tactics generator
+                  </a>
+                </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Positional
+                </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="?page=chess-guardian">
+                    Chess Guardian
+                  </a>
+                </div>
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Play Variations
+                </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="?page=hand-brain">
+                    Hand and Brain Chess
+                  </a>
+                  <a class="navbar-item" href="?page=tactical-opportunity">
+                    Tactical Opportunity
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>   
+      <section style="height: 100vh">
+        <section id="intro" class="container">
+          <section class="hero is-fullheigh">
+            <section class="hero-body">
+              <h1 class="title">
+                Hi Welcome, I'm <a href="http://vitomd.com">vitomd</a> web developer and chess player.
+              </h1>
+              <h1 class="subtitle">
+                This are my chess projects. Here you can learn, play and improve your chess.
+              </h1>
+
+              <div class="content">
+                <ul>
+                  <li>
+                    <a href="?page=winning-blunder">
+                      Winning or blunder?
+                    </a>                    
+                    : Answer if the chess move is winning or blunder, from your own Lichess.org games </li>
+                  <li> <a href="?page=tactics-generator">
+                        Tactics generator
+                      </a>
+                      : Generate tactics from your own lichess games 
+                  </li>
+                  <li> 
+                    <a href="?page=chess-guardian">
+                      Chess Guardian
+                    </a>                
+                    : Answer Chess technical questions from your own chess.com games </li>
+                  <li>
+                    <a href="?page=tactical-opportunity">
+                      Tactical Opportunity
+                    </a>
+                    : Play chess against the computer and be alerted of a tactical opportunity. </li>
+                  <li> 
+                    <a href="?page=hand-brain">
+                      Hand and Brain Chess
+                    </a>
+                    : Play this variation against the computer</li>
+                </ul>
+              </div>
+              <p class="subtitle">
+                <a href="http://twitter.com/share?text=Chess Windmill: Learn, improve and have fun&amp;url=http://chesswindmill.com&amp;hashtags=chess&amp;via=vitomd" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                  Share this project on Twitter
+                </a>
+              </p>
+            </section>
+          </section>
+        </section>
+        <iframe id='ifr' frameborder="0" scrolling="no" height="100%" width="100%"/>
+      </section>
+    </section>
+  </body>
+</html>
